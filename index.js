@@ -1,4 +1,4 @@
-/* jshint asi: true */
+/* jshint asi: true, node: true, laxbreak: true, laxcomma: true, undef: true, unused: true */
 
 var connection  = require('mqtt-connection')
   , homespun    = require('homespun-discovery')
@@ -15,7 +15,6 @@ var Accessory
   , Service
   , CommunityTypes
   , UUIDGen
-  , PushSensor
 
 module.exports = function (homebridge) {
   Accessory      = homebridge.platformAccessory
@@ -37,6 +36,7 @@ var AQE = function (log, config, api) {
   this.api = api
 
   this.options = underscore.defaults(this.config.options || {}, { verboseP: false })
+
   this.discoveries = {}
   this.eggs = {}
 
