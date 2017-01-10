@@ -154,11 +154,13 @@ AQE.prototype._addAccessory = function (sensor) {
     callback()
   })
 
-  sensor.attachAccessory.bind(sensor)(accessory)
+  if (sensor.attachAccessory.bind(sensor)(accessory)) self.api.updatePlatformAccessories([ accessory ])
 
-  self.api.registerPlatformAccessories('homebridge-platform-aqe', 'AQE', [ accessory ])
-  self.log('addAccessory', underscore.pick(sensor,
-                                           [ 'uuid', 'name', 'manufacturer', 'model', 'serialNumber', 'firmwareRevision' ]))
+  if (!self.discoveries[accessory.UUID]) {
+    self.api.registerPlatformAccessories('homebridge-platform-aqe', 'AQE', [ accessory ])
+    self.log('addAccessory', underscore.pick(sensor,
+                                             [ 'uuid', 'name', 'manufacturer', 'model', 'serialNumber', 'firmwareRevision' ]))
+  }
 }
 
 AQE.prototype.configurationRequestHandler = function (context, request, callback) {/* jshint unused: false */
