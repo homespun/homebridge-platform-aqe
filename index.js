@@ -120,7 +120,7 @@ AQE.prototype._didFinishLaunching = function () {
       self.log.debug('MQTT close')
       client.destroy()
     }).on('error', function (err) {
-      self.log.info('MQTT error', err)
+      if (err.errno !== 'ECONNRESET') self.log.info('MQTT error', err)
       client.destroy()
     }).on('disconnect', function () {
       self.log.debug('MQTT disconnect')
