@@ -19,9 +19,17 @@ If so, please try
 
 and try
 
-    % sudo npm install -g homebridge-platform-ring-video-doorbell
+    % sudo npm install -g homebridge-platform-aqe
 
 again!
+
+NB: If you install homebridge like this:
+
+    sudo npm install -g --unsafe-perm homebridge
+
+Then all subsequent installations must be like this:
+
+    sudo npm install -g --unsafe-perm homebridge-platform-aqe
 
 # Homebridge Configuration
 This is a "dynamic" platform plugin,
