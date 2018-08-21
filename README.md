@@ -51,6 +51,10 @@ this will suffice:
       ]
     , "platforms":
       [
+      [
+        { "platform" : "homebridge-platform-aqe"
+        , "name"     : "AQE"
+        }
       ]
     }
 
