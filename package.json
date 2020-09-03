@@ -1,6 +1,6 @@
 {
   "name": "homebridge-platform-aqe",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "An Air Quality Egg (http://airqualityegg.com/) platform plugin for Homebridge: https://github.com/nfarina/homebridge",
   "author": {
     "name": "Marshall Rose",
@@ -28,6 +28,7 @@
     "homebridge": ">=0.4.16"
   },
   "dependencies": {
+    "bl": ">=2.2.1",
     "hap-nodejs-community-types": "https://github.com/homespun/hap-nodejs-community-types.git",
     "homespun-discovery": "0.2.0",
     "mqtt-connection": "3.0.0",
